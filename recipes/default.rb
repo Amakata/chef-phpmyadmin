@@ -1,4 +1,4 @@
-case platform
+case node['platform']
 when "amazon"
   package "phpmyadmin" do
     action :install
