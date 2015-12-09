@@ -1,6 +1,6 @@
 
 case platform
-when "redhat", "centos", "scientific", "fedora"
+when "redhat", "centos", "scientific", "fedora", "amazon"
   default[:phpmyadmin][:cfg][:cfg_path]               =   '/etc/phpMyAdmin'
   default[:phpmyadmin][:cfg][:cfg_inc_path]           =   '/usr/share/phpMyAdmin'
   default[:phpmyadmin][:cfg][:path]                   =   '/usr/share/phpMyAdmin'
