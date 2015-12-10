@@ -1,6 +1,11 @@
 
 case node['platform']
-when "redhat", "centos", "scientific", "fedora", "amazon"
+when "amazon"
+  default[:phpmyadmin][:cfg][:cfg_path]               =   '/etc/phpMyAdmin'
+  default[:phpmyadmin][:cfg][:cfg_inc_path]           =   '/etc/phpMyAdmin'
+  default[:phpmyadmin][:cfg][:path]                   =   '/usr/share/phpMyAdmin'
+  default[:phpmyadmin][:apache2][:site_config]        =   '/etc/httpd/sites-available/phpmyadmin.conf'
+when "redhat", "centos", "scientific", "fedora"
   default[:phpmyadmin][:cfg][:cfg_path]               =   '/etc/phpMyAdmin'
   default[:phpmyadmin][:cfg][:cfg_inc_path]           =   '/usr/share/phpMyAdmin'
   default[:phpmyadmin][:cfg][:path]                   =   '/usr/share/phpMyAdmin'
@@ -22,7 +27,7 @@ default[:phpmyadmin][:cfg][:control_user]           =   'phpmyadmin'
 
 default[:phpmyadmin][:mysql][:user]                   =   'root'
 default[:phpmyadmin][:mysql][:password]          =   ''
-default[:phpmyadmin][:mysql][:host]                   =   'localhost'
+default[:phpmyadmin][:mysql][:host]                   =   '127.0.0.1'
 
 default[:phpmyadmin][:webserver]                    =   'apache2'
 
