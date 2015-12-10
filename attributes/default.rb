@@ -23,7 +23,7 @@ default[:phpmyadmin][:cfg][:allow_no_password]      =   false
 
 default[:phpmyadmin][:cfg][:control_database]       =   'phpmyadmin'
 default[:phpmyadmin][:cfg][:control_user]           =   'phpmyadmin'
-default[:phpmyadmin][:cfg][:control_host]           =   '127.0.0,1'
+default[:phpmyadmin][:cfg][:control_host]           =   '127.0.0.1'
 #default[:phpmyadmin][:cfg][:control_user_password] =   '' - will be set to an automatically generated password unless specified
 
 default[:phpmyadmin][:mysql][:user]                   =   'root'
