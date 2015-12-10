@@ -20,19 +20,18 @@ default[:phpmyadmin][:cfg][:control_database]       =   'phpmyadmin'
 default[:phpmyadmin][:cfg][:control_user]           =   'phpmyadmin'
 #default[:phpmyadmin][:cfg][:control_user_password] =   '' - will be set to an automatically generated password unless specified
 
+default[:phpmyadmin][:mysql][:user]                   =   'root'
+default[:phpmyadmin][:mysql][:password]          =   ''
+default[:phpmyadmin][:mysql][:host]                   =   'localhost'
+
 default[:phpmyadmin][:webserver]                    =   'apache2'
 
-default[:phpmyadmin][:mysql_user]                   =   'root'
-default[:phpmyadmin][:mysql_password]               =   ''
-default[:phpmyadmin][:mysql_host]                   =   'localhost'
-
+default[:phpmyadmin][:apache2][:port]                 =   80
+default[:phpmyadmin][:apache2][:server_name]          =   'phpmyadmin.yourhost.com'
+default[:phpmyadmin][:apache2][:docroot]              =   default[:phpmyadmin][:cfg][:path]
+default[:phpmyadmin][:apache2][:allow_ip_addresses]  =   ['127.0.0.1']
 
 default[:phpmyadmin][:nginx][:port]                 =   80
 default[:phpmyadmin][:nginx][:server_name]          =   'phpmyadmin.yourhost.com'
 default[:phpmyadmin][:nginx][:docroot]              =   default[:phpmyadmin][:cfg][:path]
 default[:phpmyadmin][:nginx][:fastcgi_server]       =   'unix:/dev/shm/php5-fpm.sock'
-
-
-
-
-

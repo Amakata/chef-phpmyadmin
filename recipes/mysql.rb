@@ -10,7 +10,7 @@ template sql_path do
 end
 
 execute "phpmyadmin-create-tables" do
-  command "\"#{node['phpmyadmin']['mysql_bin']}\" -u #{node['phpmyadmin']['mysql_user']} -h #{node['phpmyadmin']['mysql_host']} #{node['phpmyadmin']['mysql_password'].empty? ? '' : '-p' }\"#{node['phpmyadmin']['mysql_password']}\" < \"#{sql_path}\""
+  command "\"#{node['phpmyadmin']['mysql']['bin']}\" -u #{node['phpmyadmin']['mysql']['user']} -h #{node['phpmyadmin']['mysql']['host']} #{node['phpmyadmin']['mysql']['password'].empty? ? '' : '-p' }\"#{node['phpmyadmin']['mysql']['password']}\" < \"#{sql_path}\""
 end
 
 file sql_path do

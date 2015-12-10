@@ -33,18 +33,26 @@ Attributes
 * default[:phpmyadmin][:cfg][:control_database]       =   'phpmyadmin'
 * default[:phpmyadmin][:cfg][:control_user]           =   'phpmyadmin'
 
-By default an apache2 site for phpmyadmin will be set up. 
+* default[:phpmyadmin][:mysql][:user]                   =   'root'
+* default[:phpmyadmin][:mysql][:password]          =   ''
+* default[:phpmyadmin][:mysql][:host]                   =   'localhost'
+
+By default an apache2 site for phpmyadmin will be set up.
 You can configure nginx by setting  ['phpmyadmin']['webserver'] to 'nginx'.
 You can prevent chef from doing this by setting ['phpmyadmin']['webserver'] to false.
 
 * default[:phpmyadmin][:webserver]                    =   'apache2'
+
+* default[:phpmyadmin][:apache2][:port]                 =   80
+* default[:phpmyadmin][:apache2][:server_name]          =   'phpmyadmin.yourhost.com'
+* default[:phpmyadmin][:apache2][:docroot]              =   default[:phpmyadmin][:cfg][:path]
 
 * default[:phpmyadmin][:nginx][:port]                 =   80
 * default[:phpmyadmin][:nginx][:server_name]          =   'phpmyadmin.yourhost.com'
 * default[:phpmyadmin][:nginx][:docroot]              =   default[:phpmyadmin][:cfg][:path]
 * default[:phpmyadmin][:nginx][:fastcgi_server]       =   'unix:/dev/shm/php5-fpm.sock'
 
-The location for the phpmyadmin site configuration included in the phpmyadmin package can be set by changing 
+The location for the phpmyadmin site configuration included in the phpmyadmin package can be set by changing
 the following value.
 
 * default[:phpmyadmin][:apache2][:site_config]        =   '/etc/phpmyadmin/apache.conf'
